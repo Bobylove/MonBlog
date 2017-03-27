@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
+
+Route::get('/home',['as'=>'home','uses'=>'PostController@index']);
+
+Route::get('/posts/{slug}',['as'=>'posts.show','uses'=>'PostController@show']);
