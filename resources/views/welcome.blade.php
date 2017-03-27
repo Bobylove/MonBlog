@@ -18,10 +18,23 @@
     <div class="ui three item menu">
         <a class="item" href="/home">Home</a>
         <a class="item" href="/contact">Contact</a>
-        <a class="item" href="/log">Login</a>
+        <a class="item" href="/login">Login</a>
     </div>
+    <br>
+    <br>
+    @if(Auth::check())
+    <li><a href="#">Administration</a></li>
+    @else
+    <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
+    @endif
 
+    @if(Session::has('error'))
+    <div class="alert alert-danger">{{ Session::get('error') }}</div>
+    @endif
 
+    @if(Session::has('success'))
+    <div class="alert alert-success">{{ Session::get('success') }}</div>
+    @endif
 
     @yield('content')
 
