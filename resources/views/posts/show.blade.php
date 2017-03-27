@@ -21,7 +21,7 @@
 Pas encore de commentaire.
 @else
 @foreach($comments as $comment)
-<h4>Commantaire posté par {{ $comment->username }}</h4>
+<h4>Commantaire posté par {{ $author->username }}</h4>
 <p>{{ $comment->content }}</p>
 @endforeach
 @endif 
