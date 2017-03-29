@@ -22,11 +22,18 @@
     </div>
     <br>
     <br>
-    @if(Auth::check())
-    <li><a href="#">Administration</a></li>
-    @else
-    <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
-    @endif
+    <ul class="nav navbar-nav">
+        @if(Auth::check())
+        <li><a href="{{ URL::route('home.admin')}}">Administration</a></li>
+        @else
+        <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
+        @endif
+         @if(Auth::check())
+        <li class="pull-right"><a href="{{ URL::route('users.logout')}}">Se Déconnecter</a></li>
+        <li><a href="{{ URL::route('users.register')}}">S'enregistrer</a></li>
+        @endif
+
+    </ul>
 
     @if(Session::has('error'))
     <div class="alert alert-danger">{{ Session::get('error') }}</div>
