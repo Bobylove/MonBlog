@@ -28,7 +28,7 @@
         @else
         <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
         @endif
-         @if(Auth::check())
+        @if(Auth::check())
         <li class="pull-right"><a href="{{ URL::route('users.logout')}}">Se Déconnecter</a></li>
         <li><a href="{{ URL::route('users.register')}}">S'enregistrer</a></li>
         @endif
@@ -43,6 +43,17 @@
     <div class="alert alert-success">{{ Session::get('success') }}</div>
     @endif
 
+    @if(Auth::check())
+    @if(Auth::user()->is_admin)
+    <div class="alert alert-success">Vous êtes Admin</div>
+
+    @else
+    <div class="alert alert-success">Vous êtes un simple membre</div>
+    @endif
+
+    @else
+    <div class="alert alert-danger">Vous n'êtes pas authentifié</div>
+    @endif
     @yield('content')
 
 

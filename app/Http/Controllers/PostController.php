@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Post;
 
 class PostController extends Controller
@@ -17,6 +18,23 @@ class PostController extends Controller
 		$comments = $post->comments;
 
 		return view('posts.show',compact('post','author','comments')); 
+
+	}
+	public function admin(){
+		$posts = Post::all();
+		return view('posts.admin',compact('posts'));
+	}
+
+	public function edit($id){
+		$post = Post::find($id);
+		return view('posts.edit',compact('post'));
+
+	}
+
+	public function delete($id){
+		$post = Post::find($id);
+		$post->destroy($post->id);
+		return Redirect::back()->with('success','Votre poste a bien été supprimé');
 
 	}
 }

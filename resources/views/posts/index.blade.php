@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>index post ?</h1>
+<h1>Liste des articles</h1> 
 
 
 @foreach($posts as $post)

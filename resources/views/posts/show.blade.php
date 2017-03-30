@@ -16,7 +16,7 @@
 
 <p>{{ $post->content }}</p>
 <h3>Les Commentaires</h3>
-@if($post->counts_comment == 0)
+@if(!empty($comments))
 Pas encore de commentaire.
 @else
 @foreach($comments as $comment)

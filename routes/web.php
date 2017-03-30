@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::when('*','csrf', ['post','put','delete']);
 
 Route::get('/', function () {
 	return view('welcome');
@@ -27,9 +28,15 @@ Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 
 
-Route::group(['before'=>'auth'],function(){
+Route::group(['before'=>'admin'],function(){
 
 	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
+
+	Route::get('admin/posts',['as'=>'posts.admin','uses'=>'PostController@admin']);
+
+	Route::get('admin/posts/{id}',['as'=>'posts.edit','uses'=>'PostController@edit']);
+
+	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostController@delete']);
 
 });
 
