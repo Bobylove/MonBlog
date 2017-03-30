@@ -16,11 +16,28 @@ class UserController extends Controller
 		$users = User::all();
 		return view('users.admin',compact('users'));
 	}
+	public function delete($id){
+		$user = User::find($id);
+		$user->delete();
+		return Redirect::back()->with('success','L\'utilisateur a bien été supprimé');
+	}
+	public function permission($id){
+		$user = User::find($id);
+		if($user->is_admin){
+			$user->is_admin = 0;
+			$user->save();
+		}
+		else {
+			$user->is_admin = 1;
+			$user->save();
+		}
+		return Redirect::back()->with('success','La permission a bien été modifié');
+	}
 
 	public function login(){
 		return view('users.login');
 	}
-	
+
 	public function check(){
 		$inputs = Input::all();
 		if(Input::get('remember')){
