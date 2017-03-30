@@ -17,6 +17,8 @@ class PostController extends Controller
 	'content'=>'required | min:5'];
 
 	
+
+	
 	public function index(){
 		$posts = Post::paginate(5);
 		return view('posts.index',compact('posts'));

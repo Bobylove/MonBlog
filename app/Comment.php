@@ -17,8 +17,11 @@ class Comment extends Model
 		});
 		parent::boot();
 		self::deleted(function($comment){
-			$comment->post->counts_comment = $comment->post->comments->count();
-			$comment->post->save();
+			if($comment->post){
+				$comment->post->counts_comment = $comment->post->comments->count();
+				$comment->post->save();
+				
+			}
 		});
 
 

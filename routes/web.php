@@ -48,6 +48,10 @@ Route::group(['middelware'=>'admin'],function(){
 
 	Route::get('admin/comments',['as'=>'comments.admin','uses'=>'CommentController@admin']);
 	Route::delete('admin/comments/delete/{id}',['as'=>'comments.delete','uses'=>'CommentController@delete']);
+	Route::get('admin/users',['as'=>'users.admin','uses'=>'UserController@admin']);
+
+	Route::delete('admin/users/{id}',['as'=>'users.delete','uses'=>'UserController@delete']);
+	Route::post('admin/permission/{id}',['as'=>'users.permission','uses'=>'UserController@permission']);
 
 });
 
@@ -67,6 +71,6 @@ Route::group(['before'=>'guest'],function(){
 });
 Route::group(['before'=>'auth'],function(){
 
-	 Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
+	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
 });
 

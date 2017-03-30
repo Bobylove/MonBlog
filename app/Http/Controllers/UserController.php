@@ -12,9 +12,15 @@ use App\User;
 
 class UserController extends Controller
 {
+	public function admin(){
+		$users = User::all();
+		return view('users.admin',compact('users'));
+	}
+
 	public function login(){
 		return view('users.login');
 	}
+	
 	public function check(){
 		$inputs = Input::all();
 		if(Input::get('remember')){
