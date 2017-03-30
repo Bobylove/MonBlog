@@ -17,12 +17,13 @@
 
 <p>{{ $post->content }}</p>
 
-@if($comments)
+@if($post->counts_comment > 0)
 <h3>Les Commentaires</h3>
 @foreach($comments as $comment)
 <h4>Commantaire posté par {{ $comment->user->username }}</h4>
 <p>{{ $comment->content }}</p>
 @endforeach
+
 @else
 Pas encore de commentaire
 
