@@ -38,6 +38,9 @@ Route::group(['before'=>'admin'],function(){
 
 	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostController@delete']);
 
+	Route::post('admin/posts/update/{id}',['as'=>'posts.update','uses'=>'PostController@update']);
+
+
 });
 
 Route::group(['before'=>'guest'],function(){
