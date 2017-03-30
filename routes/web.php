@@ -12,6 +12,10 @@
 */
 // Route::when('*','csrf', ['post','put','delete']);
 
+Route::get('protected',['middleware'=> ['auth','admin'], function() {
+	return 'Vous devez être admin ';
+}]);
+
 Route::get('/', function () {
 	return view('welcome');
 });
@@ -28,7 +32,7 @@ Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 
 
-Route::group(['before'=>'admin'],function(){
+Route::group(['middelware'=>'admin'],function(){
 
 	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
 
@@ -39,6 +43,10 @@ Route::group(['before'=>'admin'],function(){
 	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostController@delete']);
 
 	Route::post('admin/posts/update/{id}',['as'=>'posts.update','uses'=>'PostController@update']);
+
+	Route::get('admin/posts/create',['as'=>'posts.create','uses'=>'PostController@create']);
+
+	// Route::post('admin/posts/store',['as'=>'posts.store','uses'=>'PostController@store']);
 
 
 });

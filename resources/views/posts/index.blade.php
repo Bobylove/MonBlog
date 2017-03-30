@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <h1>Liste des articles</h1> 
 
 
@@ -13,4 +14,5 @@
 <br>
 @endforeach
 {{$posts->Links()}}
+
 @stop

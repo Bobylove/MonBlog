@@ -23,15 +23,19 @@
     <br>
     <br>
     <ul class="nav navbar-nav">
-        @if(Auth::check())
+        @if(Auth::check() && Auth::user()->is_admin)
         <li><a href="{{ URL::route('home.admin')}}">Administration</a></li>
-        @else
-        <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
+        
         @endif
         @if(Auth::check())
         <li class="pull-right"><a href="{{ URL::route('users.logout')}}">Se Déconnecter</a></li>
+        
+        @endif
+        @if(!Auth::check())
+        <li><a href="{{ URL::route('users.login')}}">Se Connecter</a></li>
         <li><a href="{{ URL::route('users.register')}}">S'enregistrer</a></li>
         @endif
+
 
     </ul>
 
@@ -57,7 +61,13 @@
     @yield('content')
 
 
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" ></script>
 </body>
 </html>

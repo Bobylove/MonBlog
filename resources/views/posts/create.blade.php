@@ -3,12 +3,13 @@
 @section('content')
 @if(Auth::check())
 
-{{ Form::open(['route'=>['posts.update',$post->id],'method'=>'post']) }}
+<h2>Créer un article</h2>
+{{ Form::open(['route'=>['posts.update',0],'method'=>'post']) }}
 
 <div class="form-group">
 	
 	{{ Form::label('name','Nom :') }}
-	{{ Form::text('name',$post->name,['class'=>'form-control']) }}
+	{{ Form::text('name','',['class'=>'form-control']) }}
 </div>
 @if($errors->first('name'))
 <p style="color: #CD3F3F">{{ $errors->first('name')}}</p>
@@ -16,7 +17,7 @@
 
 <div class="form-group">
 	{{ Form::label('content','Contenu :') }}
-	{{ Form::textarea('content',$post->content,['class'=>'form-control']) }}
+	{{ Form::textarea('content','',['class'=>'form-control']) }}
 
 	@if($errors->first('content'))
 	<p style="color: #CD3F3F">{{ $errors->first('content')}}</p>

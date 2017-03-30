@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <h2>{{ $post->name }}</h2>
 <p>Posté par : {{ $author->username}} |
 

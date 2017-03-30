@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+
+    protected $cast = [
+    'is_admin' => 'boolean',
+    ];
     protected $guarded = ['id','created_at'];
     /**
      * The attributes that are mass assignable.
@@ -32,5 +36,8 @@ class User extends Authenticatable
     }
     public function comments(){
         return $this->hasMany('App\Comment');
+    }
+    public function isAdmin(){
+        return $this->admin;
     }
 }
