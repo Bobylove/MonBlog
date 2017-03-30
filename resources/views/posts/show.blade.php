@@ -16,14 +16,29 @@
 </p>
 
 <p>{{ $post->content }}</p>
+
+@if($comments)
 <h3>Les Commentaires</h3>
-@if(!empty($comments))
-Pas encore de commentaire.
-@else
 @foreach($comments as $comment)
 <h4>Commantaire posté par {{ $comment->user->username }}</h4>
 <p>{{ $comment->content }}</p>
 @endforeach
+@else
+Pas encore de commentaire
+
 @endif 
+@if(Auth::check())
+{{ Form::open(['route'=>['comments.create',$post->id],'method'=>'POST'])}}
+
+<div class="form-group">
+	{{ Form::text('comment','',['class'=>'form-control']) }}
+</div>
+
+{{ Form::submit('Envoyer',['class'=>'btn btn-primary']) }}
+
+{{ Form::close() }}
+@else
+Pour poster un commentaire <a href="{{ URL::route('users.login') }}">Connecter vous</a>
+@endif
 
 @stop
