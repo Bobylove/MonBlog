@@ -6,10 +6,10 @@
 {{ Form::open(['route'=>'users.check']) }}
 
 <div class="form-group">
-	{{ Form::text('username','',['placeholder'=>'username','class'=>'form-control']) }}
+	{{ Form::text('email','',['placeholder'=>'email','class'=>'form-control']) }}
 
-	@if($errors->first('username'))
-	<div class="alert alert-danger">{{ $errors->first('username') }}</div>
+	@if($errors->first('email'))
+	<div class="alert alert-danger">{{ $errors->first('email') }}</div>
 	@endif
 </div>
 <div class="form-group">

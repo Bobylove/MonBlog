@@ -46,22 +46,22 @@ class UserController extends Controller
 		else {
 			$remember = false;
 		}
-		$inputs['username'] = e($inputs['username']);
+		$inputs['email'] = e($inputs['email']);
 		$inputs['password'] = e($inputs['password']);
 		$validation = Validator::make($inputs,[
-			'username'=>'required',
+			'email'=>'required',
 			'password'=>'required',
 			]); 
 		if($validation->fails()){
 			return Redirect::back()->withErrors($validation);
 		}
 		else {
-			if(Auth::attempt(['username'=>$inputs['username'],'password'=>$inputs['password']],$remember)) {
-				Auth::attempt(['username'=>$inputs['username'],'password'=>$inputs['password']],$remember);
+			if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']],$remember)) {
+				Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']],$remember);
 				return Redirect::route('home')->with('success','Vous êtes bien connecté');
 			}
 			else {
-				return Redirect::back()->with('error',"Le mot de passe ou le nom d'utilisateur est incorrect");
+				return Redirect::back()->with('error',"Le mot de passe ou le mail est incorrect");
 			}
 		}
 		
@@ -76,11 +76,11 @@ class UserController extends Controller
 	}
 
 	public function store(){
-		$inputs['username'] = e(Input::get('username'));
+		$inputs['email'] = e(Input::get('email'));
 		$inputs['password'] = e(Input::get('password'));
 		$inputs['password_confirm'] = e(Input::get('password_confirm'));
 		$validation = Validator::make($inputs,[
-			'username'=>'required|min:3|unique:users',
+			'email'=>'required|min:3|unique:users',
 			'password'=>'required|min:4',
 			'password_confirm'=>'same:password']);
 
@@ -89,7 +89,7 @@ class UserController extends Controller
 		}
 		else {
 			$user = User::create([
-				'username'=> $inputs['username'],
+				'email'=> $inputs['email'],
 				'password'=> Hash::make($inputs['password']),
 				]);
 			$user->save();
