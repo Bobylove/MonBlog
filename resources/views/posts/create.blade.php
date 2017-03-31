@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-@if(Auth::check())
+@if(Auth::check() && Auth::user()->is_admin)
 
 <h2>Créer un article</h2>
 {{ Form::open(['route'=>['posts.update',0],'method'=>'post']) }}
@@ -34,6 +34,8 @@
 
 
 {{ Form::close() }}
+@else
+<div class="aler alert-danger">Page administrateur réserver</div>
 @endif
 
 

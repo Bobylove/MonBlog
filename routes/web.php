@@ -30,6 +30,8 @@ Route::get('/posts/{slug}',['as'=>'posts.show','uses'=>'PostController@show']);
 
 Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
+Route::get('profil',['as'=>'users.profil','uses'=>'UserController@profil']);
+
 
 
 Route::group(['middelware'=>'admin'],function(){

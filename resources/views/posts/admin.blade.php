@@ -1,8 +1,7 @@
 @extends('welcome')
 
 @section('content')
-@if(Auth::check())
-@if(Auth::user()->is_admin)
+@if(Auth::check() && Auth::user()->is_admin)
 <h1>Liste des Articles</h1>&nbsp;<a class="btn btn-success" href="{{ URL::route('posts.create')}}">Créer un article</a>
 
 <table class="table table-stripped table-bordered">
@@ -46,7 +45,7 @@
 </tbody>
 
 </table>
-@endif
+
 @else
 <div class="aler alert-danger">Page administrateur réserver</div>
 @endif

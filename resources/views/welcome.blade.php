@@ -27,6 +27,9 @@
         @endif
         @if(Auth::check())
         <li class="pull-right"><a href="{{ URL::route('users.logout')}}">Se Déconnecter</a></li>
+        <li class="pull-right"><a href="{{ URL::route('users.profil')}}">Mon profil</a></li>
+      
+
         
         @endif
         @if(!Auth::check())
