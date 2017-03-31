@@ -12,6 +12,14 @@ use App\User;
 
 class UserController extends Controller
 {
+
+	protected $rules = [
+	'firstname'=>'required | min:3',
+	'lastname'=>'required | min:3',
+	'email'=>'required | min:3',
+	'password'=>'required | min:5'
+	];
+
 	public function admin(){
 		$users = User::all();
 		return view('users.admin',compact('users'));
@@ -66,6 +74,15 @@ class UserController extends Controller
 		}
 		
 	}
+	public function profil(){
+		$users = User::all();
+		return view('users.profil',compact('users'));
+		
+	}
+	public function show($id){
+		$users = User::find($id);
+		return view('users.profil',compact('users'));
+	}
 	public function logout(){
 		Auth::logout();
 		return Redirect::route('home')->with('success','Vous êtes maintenant déconnecté');
@@ -96,4 +113,26 @@ class UserController extends Controller
 			return Redirect::route('users.login')->with('success','Vous pouvez maintenant vous connectez');
 		}
 	}
+	public function update($id){
+		$inputs = Input::all();
+
+		$users = User::find($id);
+		$users->firstname = $inputs['firstname'];
+		$users->lastname = $inputs['lastname'];
+		$users->email = $inputs['email'];
+		$users->password = Hash::make($inputs['password']);
+
+		$users->save();
+		return view('users.profil');
+
+		
+	}
+	public function edit($id){
+		$users = User::find($id);
+
+		return view('users.edit',compact('users'));
+		
+	}
 }
+
+
