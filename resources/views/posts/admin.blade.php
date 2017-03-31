@@ -24,9 +24,11 @@
 		<th>{{ $post->name}}</th>
 		<th>{{ Form::open(['route'=>['posts.publier',$post->id],'method'=>'POST']) }}
 				@if($post->publier == 0)
+				Cliquer pour : 
 				{{ Form::submit('Publier',['class'=>'btn btn-primary']) }}
+
 				@else
-				
+				Cliquer pour :
 				{{ Form::submit('Cacher',['class'=>'btn btn-primary']) }}
 				@endif
 

@@ -14,6 +14,8 @@
 <br>
 @endif
 @endforeach
+
 {{$posts->Links()}}
+
 
 @stop

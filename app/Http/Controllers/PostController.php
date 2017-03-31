@@ -20,7 +20,7 @@ class PostController extends Controller
 
 	
 	public function index(){
-		$posts = Post::paginate(5);
+		$posts = Post::where('publier','=',1)->paginate(2);
 		return view('posts.index',compact('posts'));
 	}
 	public function show($slug){
