@@ -24,6 +24,11 @@
 	@endif
 </div>
 
+<div class="form-group">
+	{{ Form::checkbox('publier') }}
+	{{ Form::label('publier','Sauvegarder en brouillon')}}
+</div>
+
 {{ Form::submit('Envoyer',['class'=>'btn btn-primary']) }}
 
 

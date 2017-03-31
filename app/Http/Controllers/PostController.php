@@ -56,6 +56,13 @@ class PostController extends Controller
 	}
 	public function update($id){
 		$inputs = Input::all();
+
+		if(Input::get('publier')){
+			$check = 0;
+		}else{
+			$check = 1;
+		}
+
 		$validation = Validator::make($inputs,$this->rules);
 
 		if($validation->fails()){
@@ -72,9 +79,11 @@ class PostController extends Controller
 				return Redirect::back()->with('success','Votre post a bien été modifié');
 			}
 			else {
+
 				$post = Post::create([
 					'name'=>$inputs['name'],
 					'content'=>$inputs['content'],
+					'publier'=>$check,
 					'slug'=>Str::slug($inputs['name']),
 					'user_id'=>Auth::user()->id,
 					]);
@@ -98,7 +107,7 @@ class PostController extends Controller
 			return Redirect::back()->with('success','le poste est en ligne');
 		}
 	}
-	
+
 
 }
 
