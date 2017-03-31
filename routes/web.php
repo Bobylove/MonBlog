@@ -43,6 +43,7 @@ Route::group(['middelware'=>'admin'],function(){
 	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostController@delete']);
 
 	Route::post('admin/posts/update/{id}',['as'=>'posts.update','uses'=>'PostController@update']);
+	Route::post('admin/posts/publier/{id}',['as'=>'posts.publier','uses'=>'PostController@publier']);
 
 	Route::get('admin/posts/create',['as'=>'posts.create','uses'=>'PostController@create']);
 

@@ -85,5 +85,20 @@ class PostController extends Controller
 		}
 	}
 
+	public function publier($id){
+		$post = Post::find($id);
+		if($post->publier == 1){
+			$post->publier = 0;
+			$post->save();
+			return Redirect::back()->with('success','Le poste ne seras pas affiché');
+		}
+		else {
+			$post->publier = 1;
+			$post->save();
+			return Redirect::back()->with('success','le poste est en ligne');
+		}
+	}
+	
+
 }
 

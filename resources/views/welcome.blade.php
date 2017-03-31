@@ -52,7 +52,7 @@
     <div class="alert alert-success">Vous êtes Admin</div>
 
     @else
-    <div class="alert alert-success">Vous êtes un simple membre</div>
+    <div class="alert alert-success">Vous êtes membre</div>
     @endif
 
     @else
