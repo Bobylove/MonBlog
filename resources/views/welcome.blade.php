@@ -15,10 +15,8 @@
 
     <div><h1>Mon blog en test</h1></div>
 
-    <div class="ui three item menu">
+    <div class="ui one item menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/contact">Contact</a>
-        <a class="item" href="/login">Login</a>
     </div>
     <br>
     <br>

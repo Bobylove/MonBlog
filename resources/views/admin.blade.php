@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 @if(Auth::check() && Auth::user()->is_admin)
 
 
