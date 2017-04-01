@@ -15,7 +15,7 @@
 	<tbody>
 		@foreach($users as $user)
 		<tr>
-			<th>{{ $user->username }}</th>
+			<th>{{ $user->firstname }}</th>
 			<th>
 				@if($user->is_admin)
 				Administrateur

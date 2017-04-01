@@ -5,11 +5,11 @@
 {{ Form::open(['route'=>'users.store']) }}
 
 <div class="form-group">
-	{{ Form::label('username','Nom d\'utilisateur') }}
-	{{ Form::text('username','',['class'=>'form-control']) }}
+	{{ Form::label('email','Email') }}
+	{{ Form::email('email','',['class'=>'form-control']) }}
 
-	@if($errors->first('username'))
-	<div class="alert alert-danger">{{ $errors->first('username')}}</div>
+	@if($errors->first('email'))
+	<div class="alert alert-danger">{{ $errors->first('email')}}</div>
 	@endif
 </div>
 

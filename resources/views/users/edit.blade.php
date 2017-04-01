@@ -26,7 +26,7 @@
 <div class="form-group">
 	
 	{{ Form::label('email','Email :') }}
-	{{ Form::text('email',$users->email,['class'=>'form-control']) }}
+	{{ Form::email('email',$users->email,['class'=>'form-control']) }}
 </div>
 @if($errors->first('email'))
 <p style="color: #CD3F3F">{{ $errors->first('email')}}</p>
@@ -35,7 +35,7 @@
 <div class="form-group">
 	
 	{{ Form::label('password','Mot de pass :') }}
-	{{ Form::text('password',$users->password,['class'=>'form-control']) }}
+	{{ Form::password('password',['class'=>'form-control']) }}
 </div>
 @if($errors->first('password'))
 <p style="color: #CD3F3F">{{ $errors->first('password')}}</p>

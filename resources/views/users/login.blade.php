@@ -6,7 +6,7 @@
 {{ Form::open(['route'=>'users.check']) }}
 
 <div class="form-group">
-	{{ Form::text('email','',['placeholder'=>'email','class'=>'form-control']) }}
+	{{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
 
 	@if($errors->first('email'))
 	<div class="alert alert-danger">{{ $errors->first('email') }}</div>

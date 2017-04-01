@@ -68,9 +68,7 @@ Route::group(['before'=>'guest'],function(){
 
 	Route::post('check',['as'=>'users.check','uses'=>'UserController@check']);
 
-	Route::get('register',['as'=>'users.register','uses'=>'UserController@register']);
-
-	Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
+	
 
 	
 	Route::post('store',['as'=>'users.store','uses'=>'UserController@store']);
@@ -78,6 +76,11 @@ Route::group(['before'=>'guest'],function(){
 
 
 });
+
+
+Route::get('register',['as'=>'users.register','uses'=>'UserController@register']);
+
+Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
 Route::group(['before'=>'auth'],function(){
 
 	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
