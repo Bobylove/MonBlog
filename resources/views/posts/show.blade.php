@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <h2>{{ $post->name }}</h2>
 <p>Posté par : {{ $author->username}} |
 
@@ -20,7 +21,7 @@
 @if($post->counts_comment > 0)
 <h3>Les Commentaires</h3>
 @foreach($comments as $comment)
-<h4>Commantaire posté par {{ $comment->user->firstname }}</h4>
+<h4>Commantaire posté par {{ $comment->user->firstname }} le <h5>{{ $comment->created_at }}</h5></h4>
 <p>{{ $comment->content }}</p>
 @endforeach
 

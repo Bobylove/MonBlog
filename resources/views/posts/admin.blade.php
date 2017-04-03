@@ -6,7 +6,7 @@
 
 <table class="table table-stripped table-bordered">
 	
-<thead>
+<thead class="thead-inverse">
 <tr>
 	<th>ID</th>
 	<th>Nom</th>

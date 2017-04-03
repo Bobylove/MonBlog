@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/home',['as'=>'home','uses'=>'PostController@index']);
 
+
 Route::get('/posts/{slug}',['as'=>'posts.show','uses'=>'PostController@show']);
 
 
