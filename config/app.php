@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => 'my encryption key',
+    'key' => 'I4FqaP2EDIk9RsbZbWJ+s+0KBc5h4rjgb/U/z3VjKcA=',
 
     'cipher' => 'AES-256-CBC',
 
