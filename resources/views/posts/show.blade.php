@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div class="container">
 <h2>{{ $post->name }}</h2>
 <p>Posté par : {{ $author->username}} |
 
@@ -42,5 +42,5 @@ Pas encore de commentaire
 @else
 Pour poster un commentaire <a href="{{ URL::route('users.login') }}">Connecter vous</a>
 @endif
-
+</div>
 @stop

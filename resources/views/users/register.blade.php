@@ -23,7 +23,7 @@
 </div>
 
 <div class="form-group">
-	{{ Form::label('','Confirmer Mot de passe') }}
+	{{ Form::label('password_confirm','Confirmer Mot de passe') }}
 	{{ Form::password('password_confirm',['class'=>'form-control']) }}
 
 	@if($errors->first('password_confirm'))

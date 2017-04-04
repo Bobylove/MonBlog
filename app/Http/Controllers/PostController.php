@@ -76,7 +76,7 @@ class PostController extends Controller
 				$post->content = $inputs['content'];
 				$post->slug = Str::slug($inputs['name']);
 				$post->save();
-				return Redirect::back()->with('success','Votre post a bien été modifié');
+				return Redirect::back()->with('success','Votre poste a bien été modifié');
 			}
 			else {
 

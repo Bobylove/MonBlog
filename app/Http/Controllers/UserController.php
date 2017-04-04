@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 
+
 class UserController extends Controller
 {
 
@@ -99,7 +100,8 @@ class UserController extends Controller
 		$validation = Validator::make($inputs,[
 			'email'=>'required|min:3|unique:users',
 			'password'=>'required|min:4',
-			'password_confirm'=>'same:password']);
+			'password_confirm'=>'required|same:password',
+			]);
 
 		if($validation->fails()){
 			return Redirect::back()->withErrors($validation);
@@ -121,10 +123,20 @@ class UserController extends Controller
 		$users->lastname = $inputs['lastname'];
 		$users->email = $inputs['email'];
 		$users->password = Hash::make($inputs['password']);
+		$validation = Validator::make($inputs,[
+			'email'=>'required|min:3',
+			'password'=>'required|min:5',
+			'firstname'=>'required|min:4',
+			'lastname'=>'required|min:4',
+			]);
 
-		$users->save();
-		return view('users.profil');
-
+		if($validation->fails()){
+			return Redirect::back()->withErrors($validation);
+		}else {
+			$users->save();
+			return view('users.profil');
+			
+		}
 		
 	}
 	public function edit($id){

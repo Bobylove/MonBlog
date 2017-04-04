@@ -82,6 +82,7 @@ Route::group(['before'=>'guest'],function(){
 Route::get('register',['as'=>'users.register','uses'=>'UserController@register']);
 
 Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
+
 Route::group(['before'=>'auth'],function(){
 
 	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
