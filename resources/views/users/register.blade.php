@@ -13,6 +13,7 @@
 	@endif
 </div>
 
+
 <div class="form-group">
 	{{ Form::label('password','Mot de passe') }}
 	{{ Form::password('password',['class'=>'form-control']) }}

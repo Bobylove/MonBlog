@@ -13,19 +13,28 @@
 		<div class="col-sm-8 blog-main">
 
 
-			@foreach($posts as $post)
-			@if($post->publier == 1)
+			
+			
+
+			@foreach($datePost as $date)
+			@if($date->publier == 1 ) 
 			<div class="blog-post">
-				<h2 class="blog-post-title">{{ $post->name }}</h2>
-				<p class="blog-post-meta">{{ $post->created_at}} by <a href="{{ URL::route('posts.show',$post->slug)}}">ME test</a></p>
+				<h2 class="blog-post-title">{{ $date->name }}</h2>
+				<p class="blog-post-meta">{{ $date->created_at}} by <a href="{{ URL::route('posts.show',$date->slug)}}">ME test</a></p>
 			</div>
 
 			<br>
+			
+
 			@endif
 			@endforeach
+
+
+
+
 		</div>
 	</div>
-{{$posts->Links()}}
+{{$datePost->Links()}}
 </div>
 
 

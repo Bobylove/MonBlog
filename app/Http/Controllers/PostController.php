@@ -20,8 +20,9 @@ class PostController extends Controller
 
 	
 	public function index(){
-		$posts = Post::where('publier','=',1)->paginate(2);
-		return view('posts.index',compact('posts'));
+		
+		$datePost = Post::latest()->where('publier','=',1)->paginate(2);
+		return view('posts.index',compact('datePost'));
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
