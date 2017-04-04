@@ -88,7 +88,3 @@ Route::group(['before'=>'auth'],function(){
 	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
 });
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
