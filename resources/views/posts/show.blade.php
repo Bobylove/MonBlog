@@ -5,7 +5,7 @@
 
 <div class="container">
 <h2>{{ $post->name }}</h2>
-<p>Posté par : {{ $author->username}} |
+<p>Posté par : {{ $author->firstname}} |
 
 	@if($post->counts_comment == 0)
 	Pas de commentaire

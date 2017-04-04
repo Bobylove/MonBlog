@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Post;
 
+
 class PostController extends Controller
 {
 	protected $rules = [
@@ -22,7 +23,11 @@ class PostController extends Controller
 	public function index(){
 		
 		$datePost = Post::latest()->where('publier','=',1)->paginate(2);
-		return view('posts.index',compact('datePost'));
+		$name = 20; // besoin de débuge la relation user /post */
+		$post = Post::where('user_id',$name)->FirstOrFail();
+		$user = $post->user;
+		
+		return view('posts.index',compact('datePost','user'));
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
