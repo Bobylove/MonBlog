@@ -18,7 +18,7 @@
 
 			@foreach($datePost as $date)
 			@if($date->publier == 1 ) 
-			<div class="blog-post">
+			<div class="blog-post centered">
 				<h2 class="animated  slideInRight blog-post-title">{{ $date->name }}</h2>
 				<p class="animated  slideInLeft blog-post-meta">{{ $date->created_at}} by <a href="{{ URL::route('posts.show',$date->slug)}}">{{ $user->firstname}}</a></p>
 			</div>
