@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password',
+    'username', 'email', 'password',
     ];
 
     /**
@@ -28,8 +28,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+    'password', 'remember_token',
     ];
+    public static function boot(){
+        parent::boot();
+        
+        self::deleted(function($users){
+            $comments = $users->comments;
+            foreach ($comments as $comment) {
+                $comment->delete();
+            }
+        });
+        return true;
+    }
 
     public function posts(){
         return $this->hasMany('App\Post');
