@@ -19,20 +19,11 @@ class Posts extends Migration
         $table->string('slug');
         $table->text('content');
         $table->integer('counts_comment')->default(0);
-        $table->integer('category_id');
         $table->integer('user_id');
+        $table->integer('publier');
         $table->timestamps();
     });
-       for($i=1;$i<10;$i++){
-        Post::create([
-            'name'=>'Post '.$i,
-            'slug'=>'post-'.$i,
-            'content'=>'Lorem Ipsum',
-            'counts_comment'=>0,
-            'category_id'=>1,
-            'user_id'=>1,
-            ]);
-    }
+       
 }
 
     /**
