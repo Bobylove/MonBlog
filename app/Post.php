@@ -8,7 +8,7 @@ class Post extends Model
 {
 	protected $guarded = ['id','created_at'];
 
-	protected $fillable = ['name','content','user_id'];
+	protected $fillable = ['name','content','publier','slug','user_id'];
 
 	public static function boot(){
 		parent::boot();

@@ -2,7 +2,7 @@
 
 @section('content')
 @if(Auth::check() && Auth::user()->is_admin)
-
+<h2>Editer un article</h2>
 {{ Form::open(['route'=>['posts.update',$post->id],'method'=>'post']) }}
 
 <div class="form-group">

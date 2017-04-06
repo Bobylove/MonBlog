@@ -4,18 +4,17 @@
 
 
 {{ Form::open(['route'=>'users.check']) }}
-
 <div class="form-group">
 	{{ Form::email('email','',['placeholder'=>'email','class'=>'form-control']) }}
 
 	@if($errors->first('email'))
-	<div class="alert alert-danger">{{ $errors->first('email') }}</div>
+	<div class="alert alert-danger hidden-xs">{{ $errors->first('email') }}</div>
 	@endif
 </div>
 <div class="form-group">
 	{{ Form::password('password',['class'=>'form-control']) }}
 	@if($errors->first('password'))
-	<div class="alert alert-danger">{{ $errors->first('password') }}</div>
+	<div class="alert alert-danger hidden-xs">{{ $errors->first('password') }}</div>
 	@endif
 </div>
 <div class="form-group">

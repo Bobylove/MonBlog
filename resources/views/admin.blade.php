@@ -4,14 +4,18 @@
 
 @if(Auth::check() && Auth::user()->is_admin)
 
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<ul class="nav navbar-nav navbar-right">
 
-<li>
-<ul>
-<a href="{{ URL::route('posts.admin')}}">Modifier les postes</a>
-<a href="{{ URL::route('comments.admin')}}">Supprimer des commentaires</a>
-<a href="{{ URL::route('users.admin')}}">Gérer les utilisateurs</a>
-</ul>
-</li>
+
+
+		<li><a href="{{ URL::route('posts.admin')}}">Modifier les postes</a></li>
+		<li><a href="{{ URL::route('comments.admin')}}">Supprimer des commentaires</a></li>
+		<li><a href="{{ URL::route('users.admin')}}">Gérer les utilisateurs</a></li>
+	</ul>
+</div>
+</div>
+
 
 
 

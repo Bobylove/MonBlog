@@ -62,12 +62,12 @@ class PostController extends Controller
 	}
 	public function update($id){
 		$inputs = Input::all();
-
 		if(Input::get('publier')){
 			$check = 0;
 		}else{
 			$check = 1;
 		}
+		
 
 		$validation = Validator::make($inputs,$this->rules);
 
@@ -75,13 +75,14 @@ class PostController extends Controller
 			return Redirect::back()->withErrors($validation);
 		}
 		else {
-			$post = Post::find('id');
+			$post = Post::find($id);
 			if ($post) {
 				$post = Post::find($id);
 				$post->name = $inputs['name'];
 				$post->content = $inputs['content'];
 				$post->slug = Str::slug($inputs['name']);
 				$post->save();
+
 				return Redirect::back()->with('success','Votre poste a bien été modifié');
 			}
 			else {

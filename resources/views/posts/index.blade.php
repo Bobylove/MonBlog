@@ -1,39 +1,48 @@
 @extends('welcome')
 
 @section('content')
-
-<div class="container">
-
-	<div class="blog-header">
-		<h1 class="animated  slideInLeft blog-title">MonBlog</h1>
-		<p class="animated  slideInRight lead blog-description">Voici la listes des article ! bonne lecture :)</p>
-	</div>
-
+<header class="intro-header" style="background-image: url('img.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1 class="animated wobble">Mon Titre du BLOG</h1>
+          <hr class="small">
+          <span class="subheading">Bienvenue et Bonne lecture </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container" >
 	<div class="row">
-		<div class="col-sm-8 blog-main">
-
-
-			
-			
-
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			@foreach($datePost as $date)
 			@if($date->publier == 1 ) 
-			<div class="blog-post centered">
-				<h2 class="animated  slideInRight blog-post-title">{{ $date->name }}</h2>
-				<p class="animated  slideInLeft blog-post-meta">{{ $date->created_at}} by <a href="{{ URL::route('posts.show',$date->slug)}}">{{ $user->firstname}}</a></p>
-			</div>
-
-			<br>
+			<div class="post-preview">
+				<a href="{{ URL::route('posts.show',$date->slug)}}">
+					<h2 class="post-title animated  slideInRight">{{ $date->name }}</h2>
+				</h2>
+			</a>
+			<p class="post-meta animated  slideInLeft blog-post-meta">{{ $date->created_at}} by <a href="{{ URL::route('posts.show',$date->slug)}}">{{ $user->firstname}}</a></p>
+			<hr>
 			@endif
 			@endforeach
-
-
-
-
 		</div>
 	</div>
-	{{$datePost->Links()}}
+
+	<ul class="pager">
+		<li class="next">
+			{{$datePost->Links()}}
+		</li>
+	</ul>
+
+
+
+	<hr>
 </div>
+
+
 
 
 
