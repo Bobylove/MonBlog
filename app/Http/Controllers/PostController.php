@@ -23,7 +23,7 @@ class PostController extends Controller
 
 	
 	public function index(){
-		
+		Carbon::setLocale('fr');
 		$datePost = Post::latest()->where('publier','=',1)->paginate(2);
 		$name = 20; // besoin de débuge la relation user /post */
 		$post = Post::where('user_id',$name)->FirstOrFail();

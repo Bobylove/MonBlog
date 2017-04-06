@@ -38,7 +38,7 @@ hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
-  border-color: white;
+  border-color: red;
 }
 .navbar-custom {
   position: absolute;
@@ -352,7 +352,7 @@ body {
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  color: #f7fbfc;
+  color: #0039e6;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
@@ -378,6 +378,7 @@ body {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
+  color: #fff;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,

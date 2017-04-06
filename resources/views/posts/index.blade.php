@@ -6,9 +6,9 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
-          <h1 class="animated wobble">Mon Titre du BLOG</h1>
+          <h1 class="animated wobble">Geek and Eat</h1>
           <hr class="small">
-          <span class="subheading">Bienvenue et Bonne lecture </span>
+          <span class="subheading"><b>Bienvenue et Bonne lecture</b> </span>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
 					<h2 class="post-title animated  slideInRight">{{ $date->name }}</h2>
 				</h2>
 			</a>
-			<p class="post-meta animated  slideInLeft blog-post-meta">{{ $date->created_at}} by <a href="{{ URL::route('posts.show',$date->slug)}}">{{ $user->firstname}}</a></p>
+			<p class="post-meta animated  slideInLeft blog-post-meta">{{ $date->created_at->diffForHumans() }} by <a href="{{ URL::route('posts.show',$date->slug)}}">{{ $user->firstname}}</a></p>
 			<hr>
 			@endif
 			@endforeach

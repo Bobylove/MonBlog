@@ -12,7 +12,6 @@
       ]) !!};
     </script>
 
-    <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -73,17 +72,6 @@
   <div class="alert alert-success ">{{ Session::get('success') }}</div>
   @endif
 
-  <!-- @if(Auth::check())
-  @if(Auth::user()->is_admin)
-  <div class="alert alert-success ">Vous êtes Admin</div>
-
-  @else
-  <div class="alert alert-success ">Vous êtes membre</div>
-  @endif
-
-  @else
-  <div class="alert alert-danger ">Vous n'êtes pas authentifié</div>
-  @endif -->
 
 </div>
 
