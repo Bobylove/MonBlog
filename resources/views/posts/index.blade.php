@@ -8,7 +8,7 @@
         <div class="site-heading">
           <h1 class="animated wobble">Geek and Eat</h1>
           <hr class="small">
-          <span class="subheading"><b>Bienvenue et Bonne lecture</b> </span>
+          <h2 class="subheading animated zoomIn"><b>Bienvenue et Bonne lecture</b> </h2>
         </div>
       </div>
     </div>
