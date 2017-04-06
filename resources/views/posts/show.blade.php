@@ -5,7 +5,7 @@
 
 <div class="container">
 <h2>{{ $post->name }}</h2>
-<p>Posté par : {{ $author->firstname}} |
+<p><i>Article posté par : {{ $author->firstname}}</i> |
 
 	@if($post->counts_comment == 0)
 	Pas de commentaire
@@ -21,7 +21,7 @@
 @if($post->counts_comment > 0)
 <h3>Les Commentaires</h3>
 @foreach($comments as $comment)
-<p>Commantaire posté par <strong>{{ $comment->user->firstname }}</strong> le <i>{{ $comment->created_at->format('F-d-Y à H:i:s') }}</i></p>
+<p>Commentaire posté par <strong>{{ $comment->user->firstname }}</strong> <i>{{ $comment->created_at->diffForHumans() }}</i></p>
 <p>{{ $comment->content }}</p>
 @endforeach
 

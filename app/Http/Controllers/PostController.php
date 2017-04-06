@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+
 use Illuminate\Support\Str;
 use App\Post;
 
@@ -31,6 +33,7 @@ class PostController extends Controller
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
+		Carbon::setLocale('fr');
 		$author = $post->user;
 		$comments = $post->comments;
 
