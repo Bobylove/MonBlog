@@ -21,7 +21,7 @@
 @if($post->counts_comment > 0)
 <h3>Les Commentaires</h3>
 @foreach($comments as $comment)
-<h4>Commantaire posté par {{ $comment->user->firstname }} le <h5>{{ $comment->created_at }}</h5></h4>
+<p>Commantaire posté par <strong>{{ $comment->user->firstname }}</strong> le <i>{{ $comment->created_at->format('F-d-Y à H:i:s') }}</i></p>
 <p>{{ $comment->content }}</p>
 @endforeach
 
