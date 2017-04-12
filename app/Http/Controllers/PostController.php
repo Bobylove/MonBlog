@@ -29,7 +29,7 @@ class PostController extends Controller
 		$post = Post::where('user_id',$name)->FirstOrFail();
 		$user = $post->user;
 		
-		return view('posts.index',compact('datePost'));
+		return view('posts.index',compact('user','datePost'));
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
