@@ -29,7 +29,7 @@ class Posts extends Migration
         'counts_comment'=>0,
         'user_id'=>1,
         'slug'=>'post',
-        ])
+        ]);
        
 }
 
