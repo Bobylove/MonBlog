@@ -21,14 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password')->nullable(false)->change();
             $table->rememberToken();
-            $table->boolean('is_admin')->default('0')->nullable(false)->change();
+            $table->integer('is_admin')->default(0)->nullable(false)->change();
             $table->timestamps();
         });
         User::create([
-            'id'=>1,
             'email'=>'admin@gmail.com',
             'password'=>Hash::make('admin'),
-            'is_admin'=>true,
+            'is_admin'=>1,
             ]);
     }
 
