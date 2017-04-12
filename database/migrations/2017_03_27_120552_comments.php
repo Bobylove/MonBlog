@@ -14,11 +14,11 @@ class Comments extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('content');
-            $table->integer('user_id');
-            $table->integer('post_id');
-            $table->timestamps();
+            $table->increments('id')->nullable();
+            $table->text('content')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->integer('post_id')->nullable();
+            $table->timestamps()->nullable();
         });
        
     }
