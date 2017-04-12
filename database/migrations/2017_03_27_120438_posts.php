@@ -23,13 +23,7 @@ class Posts extends Migration
         $table->integer('publier')->nullable(false)->change();
         $table->timestamps();
     });
-    Post::create([
-        'name'=>'Post 1',
-        'content'=>'lorem ipsum',
-        'counts_comment'=>0,
-        'user_id'=>1,
-        'slug'=>'post',
-        ]);
+   
        
 }
 
