@@ -16,6 +16,9 @@ class PostsTableSeeder extends Seeder
         	'content'=>'simplon cest trop cool',
         	'user_id'=>1,
         	'publier'=>1,
+            'slug'=>'post-1',
+            'created_at'=>null,
+            'updated_at'=>null,
         	]);
     }
 }
