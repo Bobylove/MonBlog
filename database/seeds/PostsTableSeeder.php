@@ -12,7 +12,7 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         DB::table('posts')->insert([
-        	'name'=>'test',
+        	'name'=>'test 1',
         	'content'=>'simplon cest trop cool',
         	'user_id'=>1,
         	'publier'=>1,
@@ -20,5 +20,77 @@ class PostsTableSeeder extends Seeder
             'created_at'=>'2017-04-06 17:35:36',
             'updated_at'=>'2017-04-06 17:35:36',
         	]);
+        DB::table('posts')->insert([
+            'name'=>'test 2',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-2',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 3',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-3',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 4',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-4',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 5',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-5',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 6',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-6',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 7',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-7',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 8',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-8',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
+        DB::table('posts')->insert([
+            'name'=>'test 9',
+            'content'=>'simplon cest trop cool',
+            'user_id'=>1,
+            'publier'=>1,
+            'slug'=>'post-9',
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
+            ]);
     }
 }
