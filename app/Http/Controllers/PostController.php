@@ -90,15 +90,7 @@ class PostController extends Controller
 			}
 			else {
 
-				// $post = Post::create([
-				// 	'name'=>$inputs['name'],
-				// 	'content'=>$inputs['content'],
-				// 	'publier'=>$check,
-				// 	'slug'=>Str::slug($inputs['name']),
-				// 	'user_id'=>Auth::user()->id,
-				// 	]);
-				// $post->save();
-				// return Redirect::route('posts.edit',$post->id)->with('success','Votre poste a bien été crée');
+				
 				return view('posts.create');
 
 			}
