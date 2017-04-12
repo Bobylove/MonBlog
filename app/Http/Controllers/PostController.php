@@ -78,43 +78,30 @@ class PostController extends Controller
 			return Redirect::back()->withErrors($validation);
 		}
 		else {
-			
-			
 			$post = Post::find($id);
-			$post->name = $inputs['name'];
-			$post->content = $inputs['content'];
-			$post->slug = Str::slug($inputs['name']);
-			$post->save();
+			if ($post) {
+				$post = Post::find($id);
+				$post->name = $inputs['name'];
+				$post->content = $inputs['content'];
+				$post->slug = Str::slug($inputs['name']);
+				$post->save();
 
-			return Redirect::back()->with('success','Votre poste a bien été modifié');
-		}
+				return Redirect::back()->with('success','Votre poste a bien été modifié');
+			}
+			else {
 
-		
-	}
+				// $post = Post::create([
+				// 	'name'=>$inputs['name'],
+				// 	'content'=>$inputs['content'],
+				// 	'publier'=>$check,
+				// 	'slug'=>Str::slug($inputs['name']),
+				// 	'user_id'=>Auth::user()->id,
+				// 	]);
+				// $post->save();
+				// return Redirect::route('posts.edit',$post->id)->with('success','Votre poste a bien été crée');
+				return view('posts.create');
 
-	public function create(){
-		$inputs = Input::all();
-		if(Input::get('publier')){
-			$check = 0;
-		}else{
-			$check = 1;
-		}
-		
-
-		$validation = Validator::make($inputs,$this->rules);
-
-		if($validation->fails()){
-			return Redirect::back()->withErrors($validation);
-			$post = Post::create([
-				'name'=>$inputs['name'],
-				'content'=>$inputs['content'],
-				'publier'=>$check,
-				'slug'=>Str::slug($inputs['name']),
-				'user_id'=>Auth::user()->id,
-				]);
-			$post->save();
-			return Redirect::route('posts.admin')->with('success','Votre poste a bien été crée');
-
+			}
 		}
 	}
 

@@ -54,7 +54,7 @@ Route::group(['middelware'=>'admin'],function(){
 	Route::post('admin/posts/update/{id}',['as'=>'posts.update','uses'=>'PostController@update']);
 	Route::post('admin/posts/publier/{id}',['as'=>'posts.publier','uses'=>'PostController@publier']);
 
-	Route::post('admin/posts/create',['as'=>'posts.create','uses'=>'PostController@create']);
+	Route::post('admin/posts/create',['as'=>'posts.create','uses'=>'PostController@update']);
 
 	Route::get('admin/comments',['as'=>'comments.admin','uses'=>'CommentController@admin']);
 	Route::delete('admin/comments/delete/{id}',['as'=>'comments.delete','uses'=>'CommentController@delete']);
