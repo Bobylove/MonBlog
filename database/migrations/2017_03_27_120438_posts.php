@@ -19,7 +19,7 @@ class Posts extends Migration
         $table->string('slug')->nullable(false)->change();
         $table->text('content')->nullable(false)->change();
         $table->integer('counts_comment')->default(0)->nullable(false)->change();
-        $table->integer('user_id')->nullable(false)->change();
+        $table->integer('user_id')->default(1)->nullable(false)->change();
         $table->integer('publier')->default(1)->nullable(false)->change();
         $table->timestamps();
     });
