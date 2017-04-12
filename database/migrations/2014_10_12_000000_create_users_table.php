@@ -24,11 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('is_admin')->default(0)->nullable(false)->change();
             $table->timestamps();
         });
-        User::create([
-            'email'=>'admin@gmail.com',
-            'password'=>Hash::make('admin'),
-            'is_admin'=>1,
-            ]);
+        
     }
 
     /**
