@@ -15,14 +15,14 @@ class CreateUsersTable extends Migration
     {
        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->nullable();
-            $table->string('firstname')->nullable();
-            $table->string('lastname')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('password')->nullable();
-            $table->rememberToken()->nullable();
+            $table->string('username')->nullable(true);
+            $table->string('firstname')->nullable(true);
+            $table->string('lastname')->nullable(true);
+            $table->string('email')->unique()->nullable(true);
+            $table->string('password')->nullable(true);
+            $table->rememberToken()->nullable(true);
             $table->boolean('is_admin')->default('0');
-            $table->timestamps()->nullable();
+            $table->timestamps()->nullable(true);
         });
         User::create([
             'email'=>'admin@gmail.com',

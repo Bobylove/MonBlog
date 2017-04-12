@@ -14,14 +14,14 @@ class Posts extends Migration
     public function up()
     {
        Schema::create('posts', function (Blueprint $table) {
-        $table->increments('id')->nullable();
-        $table->string('name')->nullable();
-        $table->string('slug')->nullable();
-        $table->text('content')->nullable();
+        $table->increments('id')->nullable(true);
+        $table->string('name')->nullable(true);
+        $table->string('slug')->nullable(true);
+        $table->text('content')->nullable(true);
         $table->integer('counts_comment')->default(0);
-        $table->integer('user_id')->nullable();
-        $table->integer('publier')->nullable();
-        $table->timestamps()->nullable();
+        $table->integer('user_id')->nullable(true);
+        $table->integer('publier')->nullable(true);
+        $table->timestamps()->nullable(true);
     });
        
 }
