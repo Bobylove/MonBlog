@@ -17,8 +17,8 @@ class PostsTableSeeder extends Seeder
         	'user_id'=>1,
         	'publier'=>1,
             'slug'=>'post-1',
-            'created_at'=>null,
-            'updated_at'=>null,
+            'created_at'=>'2017-04-06 17:35:36',
+            'updated_at'=>'2017-04-06 17:35:36',
         	]);
     }
 }
