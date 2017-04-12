@@ -23,12 +23,7 @@ class Posts extends Migration
         $table->integer('publier')->nullable(false)->change();
         $table->timestamps()->nullable(false)->change();
     });
-       Post::create([
-            'name'=>'Laravel',
-            'content'=>'true or false ? hahaha',
-            'user_id'=>1,
-            'publier'=>1,
-            ]);
+    
        
 }
 
