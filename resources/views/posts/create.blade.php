@@ -4,7 +4,7 @@
 @if(Auth::check() && Auth::user()->is_admin)
 
 <h2>Créer un article</h2>
-{{ Form::open(['route'=>['posts.update',0],'method'=>'post']) }}
+{{ Form::open(['route'=>['posts.create'],'method'=>'post']) }}
 
 <div class="form-group">
 	

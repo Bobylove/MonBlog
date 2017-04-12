@@ -78,8 +78,8 @@ class PostController extends Controller
 			return Redirect::back()->withErrors($validation);
 		}
 		else {
-			$post = Post::find($id);
-			if ($post) {
+			
+			
 				$post = Post::find($id);
 				$post->name = $inputs['name'];
 				$post->content = $inputs['content'];
@@ -88,9 +88,24 @@ class PostController extends Controller
 
 				return Redirect::back()->with('success','Votre poste a bien été modifié');
 			}
-			else {
+			
+		}
+	}
 
-				$post = Post::create([
+	public function create(){
+		$inputs = Input::all();
+		if(Input::get('publier')){
+			$check = 0;
+		}else{
+			$check = 1;
+		}
+		
+
+		$validation = Validator::make($inputs,$this->rules);
+
+		if($validation->fails()){
+			return Redirect::back()->withErrors($validation);
+		$post = Post::create([
 					'name'=>$inputs['name'],
 					'content'=>$inputs['content'],
 					'publier'=>$check,
@@ -98,10 +113,8 @@ class PostController extends Controller
 					'user_id'=>Auth::user()->id,
 					]);
 				$post->save();
-				return Redirect::route('posts.edit',$post->id)->with('success','Votre poste a bien été crée');
+				return Redirect::route('posts.admin')->with('success','Votre poste a bien été crée');
 
-			}
-		}
 	}
 
 	public function publier($id){
