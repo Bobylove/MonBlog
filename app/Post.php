@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-	
+	protected $guarded = ['id','created_at'];
+
+	protected $fillable = ['name','content','publier','slug','user_id'];
 
 	public static function boot(){
 		parent::boot();
@@ -24,7 +26,14 @@ class Post extends Model
 		return true;
 	}
 
-	
+	public function user(){
+		return $this->belongsTo('App\User');
+
+	}
+
+	public function comments(){
+		return $this->hasMany('App\Comment');
+	}
 }
 
 

@@ -12,7 +12,7 @@ class User extends Authenticatable
     protected $cast = [
     'is_admin' => 'boolean',
     ];
-   
+    protected $guarded = ['id','created_at'];
     /**
      * The attributes that are mass assignable.
      *
@@ -43,5 +43,13 @@ class User extends Authenticatable
     }
    
 
-    
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
+    public function isAdmin(){
+        return $this->admin;
+    }
 }
