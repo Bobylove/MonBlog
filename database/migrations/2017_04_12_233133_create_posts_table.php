@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
         $table->string('slug');
         $table->text('content');
         $table->integer('counts_comment')->default(0);
-        $table->integer('user_id')->default(1);
+        $table->foreign('user_id')->references('id')->on('users');;
         $table->integer('publier')->default(1);
         $table->timestamps();
     });
