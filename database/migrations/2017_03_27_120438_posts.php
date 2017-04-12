@@ -18,7 +18,7 @@ class Posts extends Migration
         $table->string('name')->nullable(false)->change();
         $table->string('slug')->nullable(false)->change();
         $table->text('content')->nullable(false)->change();
-        $table->integer('counts_comment')->default(0);
+        $table->integer('counts_comment')->default(0)->nullable(false)->change();
         $table->integer('user_id')->nullable(false)->change();
         $table->integer('publier')->nullable(false)->change();
         $table->timestamps()->nullable(false)->change();
