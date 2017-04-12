@@ -41,9 +41,7 @@ class User extends Authenticatable
         });
         return true;
     }
-    public function post(){
-        return $this->belongsTo('App\Post','foreign_key');
-    }
+   
 
     public function posts(){
         return $this->hasMany('App\Post');
