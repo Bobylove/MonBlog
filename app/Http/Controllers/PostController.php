@@ -80,16 +80,16 @@ class PostController extends Controller
 		else {
 			
 			
-				$post = Post::find($id);
-				$post->name = $inputs['name'];
-				$post->content = $inputs['content'];
-				$post->slug = Str::slug($inputs['name']);
-				$post->save();
+			$post = Post::find($id);
+			$post->name = $inputs['name'];
+			$post->content = $inputs['content'];
+			$post->slug = Str::slug($inputs['name']);
+			$post->save();
 
-				return Redirect::back()->with('success','Votre poste a bien été modifié');
-			}
-			
+			return Redirect::back()->with('success','Votre poste a bien été modifié');
 		}
+		
+		
 	}
 
 	public function create(){
@@ -105,32 +105,32 @@ class PostController extends Controller
 
 		if($validation->fails()){
 			return Redirect::back()->withErrors($validation);
-		$post = Post::create([
-					'name'=>$inputs['name'],
-					'content'=>$inputs['content'],
-					'publier'=>$check,
-					'slug'=>Str::slug($inputs['name']),
-					'user_id'=>Auth::user()->id,
-					]);
+			$post = Post::create([
+				'name'=>$inputs['name'],
+				'content'=>$inputs['content'],
+				'publier'=>$check,
+				'slug'=>Str::slug($inputs['name']),
+				'user_id'=>Auth::user()->id,
+				]);
+			$post->save();
+			return Redirect::route('posts.admin')->with('success','Votre poste a bien été crée');
+
+		}
+
+		public function publier($id){
+			$post = Post::find($id);
+			if($post->publier == 1){
+				$post->publier = 0;
 				$post->save();
-				return Redirect::route('posts.admin')->with('success','Votre poste a bien été crée');
+				return Redirect::back()->with('success','Le poste ne seras pas affiché');
+			}
+			else {
+				$post->publier = 1;
+				$post->save();
+				return Redirect::back()->with('success','le poste est en ligne');
+			}
+		}
+
 
 	}
-
-	public function publier($id){
-		$post = Post::find($id);
-		if($post->publier == 1){
-			$post->publier = 0;
-			$post->save();
-			return Redirect::back()->with('success','Le poste ne seras pas affiché');
-		}
-		else {
-			$post->publier = 1;
-			$post->save();
-			return Redirect::back()->with('success','le poste est en ligne');
-		}
-	}
-
-
-}
 
