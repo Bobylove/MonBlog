@@ -46,7 +46,7 @@ Route::group(['middelware'=>'admin'],function(){
 	Route::get('admin',['as'=>'home.admin','uses'=>'HomeController@admin']);
 
 	Route::get('admin/posts',['as'=>'posts.admin','uses'=>'PostController@admin']);
-
+Route::get('admin/posts/create',['as'=>'posts.create','uses'=>'PostController@new']);
 	Route::get('admin/posts/{id}',['as'=>'posts.edit','uses'=>'PostController@edit']);
 
 	Route::delete('admin/posts/delete/{id}',['as'=>'posts.delete','uses'=>'PostController@delete']);

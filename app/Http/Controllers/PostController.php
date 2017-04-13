@@ -103,6 +103,9 @@ class PostController extends Controller
 			}
 		}
 	}
+	public function new(){
+		return view('posts.create');
+	}
 
 	public function publier($id){
 		$post = Post::find($id);
