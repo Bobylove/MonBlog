@@ -98,7 +98,7 @@ class PostController extends Controller
 					'user_id'=>Auth::user()->id,
 					]);
 				$post->save();
-				return Redirect::route('posts.edit',$post->id)->with('success','Votre poste a bien été crée');
+				return Redirect::route('home')->with('success','Votre poste a bien été crée');
 
 			}
 		}
