@@ -3,7 +3,8 @@
 @section('content')
 @if(Auth::check())
 
-{{ Form::open(['route'=>['users.update',$_SESSION['id']
+{{ Form::open(['route'=>['users.update',$_SESSION['id'],'method'=>'post']) }}
+
 <div class="form-group">
 	
 	{{ Form::label('firstname','Prénom :') }}
