@@ -14,11 +14,12 @@
 	</thead>
 	<tbody>
 		@foreach($users as $user)
-		@if($user->id == 1)
+
+		@else
 		<tr>
 			<th>{{ $user->firstname }}</th>
 			<th>
-				@if($user->is_admin)
+				@if($user->is_admin && $user->id != 1)
 				Administrateur
 				@else
 				Membre
