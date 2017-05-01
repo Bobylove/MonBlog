@@ -16,11 +16,9 @@ Route::get('protected',['middleware'=> ['auth','admin'], function() {
 	return 'Vous devez être admin ';
 }]);
 
-Route::get('/', function () {
-	return view('posts.index');
-});
 
-Route::get('/home',['as'=>'home','uses'=>'PostController@index']);
+
+Route::get('/home',['as'=>'home','uses'=>'PostController@index']);Route::get('/',['as'=>'welcome','uses'=>'PostController@index']);
 
 
 Route::get('/posts/{slug}',['as'=>'posts.show','uses'=>'PostController@show']);
