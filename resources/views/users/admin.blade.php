@@ -39,7 +39,7 @@
 				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
 				{{ Form::close() }}
 				@else
-				<div>GOD</div>
+				<div>GOD MODE</div>
 				@endif
 
 
