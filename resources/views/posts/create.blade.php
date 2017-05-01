@@ -17,7 +17,7 @@
 
 <div class="form-group">
 	{{ Form::label('content','Contenu :') }}
-	{{ Form::textarea('content','',['class'=>'form-control']) }}
+	{{ Form::textarea('content','',['id'=>'summernote', 'class'=>'form-control']) }}
 
 	@if($errors->first('content'))
 	<p style="color: #CD3F3F">{{ $errors->first('content')}}</p>

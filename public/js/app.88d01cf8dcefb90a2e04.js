@@ -76,7 +76,7 @@ $(document).ready(function () {
 		$('.alert').remove();
 	});
 
-	$('.content').summernote();
+	$('#summernote').summernote();
 });
 
 /***/ }),
