@@ -14,18 +14,18 @@
 	</thead>
 	<tbody>
 		@foreach($users as $user)
-@if($user->id != 1)
+		
 		<tr>
 			<th>{{ $user->firstname }}</th>
 			<th>
-				@if($user->is_admin && $user->id != 1)
+				@if($user->is_admin)
 				Administrateur
 				@else
 				Membre
 				@endif
 			</th>
 			<th>
-				
+				@if($user->id != 1)
 				{{ Form::open(['route'=>['users.permission',$user->id],'method'=>'POST']) }}
 				@if($user->is_admin)
 				{{ Form::submit('Rendre Membre',['class'=>'btn btn-primary']) }}
@@ -38,6 +38,9 @@
 				{{ Form::open(['route'=>['users.delete',$user->id],'method'=>'Delete']) }}
 				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
 				{{ Form::close() }}
+				@else
+				<div>GOD</div>
+				@endif
 
 
 			</th>
@@ -45,7 +48,7 @@
 		@endforeach
 	</tbody>
 </table>
-@endif
+
 @else
 <div class="aler alert-danger">Page administrateur réserver</div>
 @endif
