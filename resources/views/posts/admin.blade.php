@@ -2,7 +2,7 @@
 
 @section('content')
 @if(Auth::check() && Auth::user()->is_admin)
-<h1>Liste des Articles</h1>&nbsp;<a class="btn btn-success" href="{{ URL::route('posts.create')}}">Créer un article</a>
+<h1>Liste des Articles</h1>&nbsp;<a class="btn btn-success" href="posts/create">Créer un article</a>
 
 <table class="table table-stripped table-bordered">
 	

@@ -3,5 +3,8 @@ $(document).ready(function () {
 		$('.alert').remove();
 	});
 
+
 	$('#summernote').summernote();
 });
+
+
