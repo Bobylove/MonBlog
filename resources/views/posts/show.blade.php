@@ -43,6 +43,8 @@ Pas encore de commentaire
 Pour poster un commentaire <a href="{{ URL::route('users.login') }}">Connecter vous</a>
 @endif
 </div>
+@else
+<div class="alert alert-danger ">Oups ! l'article n'existe pas encore ! </div>
 
 @endif
 @stop
