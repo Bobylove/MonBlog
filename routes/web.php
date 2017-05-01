@@ -17,7 +17,7 @@ Route::get('protected',['middleware'=> ['auth','admin'], function() {
 }]);
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('posts.index');
 });
 
 Route::get('/home',['as'=>'home','uses'=>'PostController@index']);
