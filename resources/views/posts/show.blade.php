@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+@if($date->publier == 1 ) 
 <div class="container">
 <h2>{{ $post->name }}</h2>
 <p><i>Article posté par : {{ $author->firstname}}</i> |
@@ -43,4 +43,6 @@ Pas encore de commentaire
 Pour poster un commentaire <a href="{{ URL::route('users.login') }}">Connecter vous</a>
 @endif
 </div>
+
+@endif
 @stop
