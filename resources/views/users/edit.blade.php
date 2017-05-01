@@ -1,9 +1,9 @@
 @extends('welcome')
 
 @section('content')
-@if(Auth::check())
+@if(Auth::check() && $_SESSION['id'] == $users->id)
 
-{{ Form::open(['route'=>['users.update',$_SESSION['id'],'method'=>'post']) }}
+{{ Form::open(['route'=>['users.update',$users->id],'method'=>'post']) }}
 
 <div class="form-group">
 	
