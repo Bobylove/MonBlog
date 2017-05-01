@@ -41,9 +41,6 @@
             <a  href="/home">Home</a>
           </li>
           @if(Auth::check())
-          <?php session_start(); 
-           $_SESSION['id'] = Auth::user()->id;
-           ?>
 
           <li> <a  href="{{ URL::route('users.profil')}}">Mon profil</a>
           </li>

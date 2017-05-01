@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-@if(Auth::check() && $_SESSION['id'] == $users->id)
+@if(Auth::check() && Auth::user()->id == $users->id)
 
 {{ Form::open(['route'=>['users.update',$users->id],'method'=>'post']) }}
 
