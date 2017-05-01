@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if($date->publier == 1 ) 
+@if($post->publier == 1 ) 
 <div class="container">
 <h2>{{ $post->name }}</h2>
 <p><i>Article posté par : {{ $author->firstname}}</i> |
