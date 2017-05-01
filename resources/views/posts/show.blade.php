@@ -16,7 +16,7 @@
 	@endif
 </p>
 
-<p>{{ htmlspecialchars($post->content, ENT_QUOTES, "UTF-8") }}</p>
+<p>{!! $post->content !!}</p>
 
 @if($post->counts_comment > 0)
 <h3>Les Commentaires</h3>
