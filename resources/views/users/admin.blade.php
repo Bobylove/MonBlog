@@ -14,6 +14,7 @@
 	</thead>
 	<tbody>
 		@foreach($users as $user)
+		@if($user->id == 1)
 		<tr>
 			<th>{{ $user->firstname }}</th>
 			<th>
