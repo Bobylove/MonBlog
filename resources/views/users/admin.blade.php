@@ -14,8 +14,7 @@
 	</thead>
 	<tbody>
 		@foreach($users as $user)
-
-		@else
+@if($user->id != 1)
 		<tr>
 			<th>{{ $user->firstname }}</th>
 			<th>
@@ -46,6 +45,7 @@
 		@endforeach
 	</tbody>
 </table>
+@endif
 @else
 <div class="aler alert-danger">Page administrateur réserver</div>
 @endif
