@@ -31,7 +31,7 @@ Route::get('logout',['as'=>'users.logout','uses'=>'UserController@logout']);
 
 Route::get('users/profil',['as'=>'users.profil','uses'=>'UserController@profil']);
 
-Route::get('users/profil/{id}',['as'=>'users.edit','uses'=>'UserController@edit']);
+Route::get('users/profil',['as'=>'users.edit','uses'=>'UserController@edit']);
 
 Route::post('users/profil/update/{id}',['as'=>'users.update','uses'=>'UserController@update']);
 
