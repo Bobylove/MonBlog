@@ -14,7 +14,13 @@
     </div>
   </div>
 </header>
-<marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >plop le monde sa gere ou pas ? oui non ? </span></marquee>
+<marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >
+	@foreach($datePost as $date)
+	@if($date->publier == 1 )
+	{{ $date->name }}
+	@endif
+	@endforeach
+ </span></marquee>
 <div class="container" >
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
