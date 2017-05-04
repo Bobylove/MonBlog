@@ -17,7 +17,7 @@
 <marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
-	{{ $slide->name }} ......
+	<a href="{{ URL::route('posts.show',$slide->slug)}}">{{ $slide->name }} ......</a> 
 	@endif
 	@endforeach
  </span></marquee>
