@@ -6,7 +6,9 @@ $(document).ready(function () {
 
 	$('#summernote').summernote();
 
-	$('#test1').on("mouseenter mouseleave", handlerInOut); 
+	$('#test1').hover().stop();
+
+	
 
 	 
 });
