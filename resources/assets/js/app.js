@@ -5,6 +5,9 @@ $(document).ready(function () {
 
 
 	$('#summernote').summernote();
+
+	$('#test1').live('mouseover').stop();
+	$('#test1').live('mouseleave').start();
 });
 
 

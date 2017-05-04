@@ -14,7 +14,8 @@
     </div>
   </div>
 </header>
-<marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >
+<br>
+<marquee id="test1"><span >
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
 	<a href="{{ URL::route('posts.show',$slide->slug)}}">{{ $slide->name }} ......</a> 
