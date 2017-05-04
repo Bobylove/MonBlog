@@ -78,7 +78,9 @@ $(document).ready(function () {
 
 	$('#summernote').summernote();
 
-	$('#test1').hover().stop();
+	$('#test1').hover(function () {
+		$(this).stop();
+	});
 });
 
 /***/ }),
