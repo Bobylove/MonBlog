@@ -20,14 +20,18 @@ class PostController extends Controller
 	'content'=>'required | min:5'];
 
 	
-
+public function welcome(){
+	return view('welcome');
+}
 	
 	public function index(){
 		Carbon::setLocale('fr');
 		$datePost = Post::latest()->where('publier','=',1)->paginate(2);
+		$name = 1; // besoin de débuge la relation user /post */
+		$post = Post::where('user_id',$name)->FirstOrFail();
+		$user = $post->user;
 		
-		
-		return view('posts.index',compact('datePost'));
+		return view('posts.index',compact('user','datePost'));
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
