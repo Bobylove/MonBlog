@@ -17,7 +17,7 @@
 <marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >
 	@foreach($datePost as $date)
 	@if($date->publier == 1 )
-	{{ $date->name }}
+	{{ $date->name }} ......
 	@endif
 	@endforeach
  </span></marquee>
