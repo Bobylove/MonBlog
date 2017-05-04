@@ -15,9 +15,9 @@
   </div>
 </header>
 <marquee id="test1"><span onmouseover="getElementByid('test1').stop();" onmouseout="getElementByid('test1').start();"  >
-	@foreach($datePost as $date)
-	@if($date->publier == 1 )
-	{{ $date->name }} ......
+	@foreach($postSlide as $slide)
+	@if($slide->publier == 1 )
+	{{ $slide->name }} ......
 	@endif
 	@endforeach
  </span></marquee>

@@ -30,8 +30,9 @@ public function welcome(){
 		$name = 1; // besoin de débuge la relation user /post */
 		$post = Post::where('user_id',$name)->FirstOrFail();
 		$user = $post->user;
+		$postSlide = Post::all();
 		
-		return view('posts.index',compact('user','datePost'));
+		return view('posts.index',compact('user','datePost','postSlide'));
 	}
 	public function show($slug){
 		$post = Post::where('slug',$slug)->FirstOrFail();
