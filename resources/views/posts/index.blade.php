@@ -14,6 +14,7 @@
     </div>
   </div>
 </header>
+<div id="slideInRight"><p>ploo le monde sa gere ou pas ? oui non ? </p></div>
 <div class="container" >
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
