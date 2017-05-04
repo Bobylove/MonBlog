@@ -27,7 +27,7 @@ public function welcome(){
 	public function index(){
 		Carbon::setLocale('fr');
 		$datePost = Post::latest()->where('publier','=',1)->paginate(2);
-		$name = User::all(); // besoin de débuge la relation user /post */
+		$name = Post::where('user_name'); // besoin de débuge la relation user /post */
 		$post = Post::where('user_id',$name)->FirstOrFail();
 		$user = $post->user;
 		
