@@ -15,7 +15,7 @@
   </div>
 </header>
 <br>
-<marquee id="test1"><span >
+<marquee id="test1"><span id="test1" >
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
 	<a href="{{ URL::route('posts.show',$slide->slug)}}">{{ $slide->name }} ......</a> 
