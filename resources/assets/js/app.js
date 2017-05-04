@@ -6,8 +6,12 @@ $(document).ready(function () {
 
 	$('#summernote').summernote();
 
-	$('#test1').live('mouseover').stop();
-	$('#test1').live('mouseleave').start();
+	$('#test1').live('mouseover', function () {
+		$(this).stop();
+	});
+	$('#test1').live('mouseleave', function (){
+		$(this).start();
+	});
 });
 
 
