@@ -32,7 +32,7 @@
 					<h2 class="post-title animated  slideInRight">{{ $date->name }}</h2>
 				</h2>
 			</a>
-			<p class="post-meta animated  slideInLeft blog-post-meta">{{ $date->created_at->diffForHumans() }} by <a href="{{ URL::route('posts.show',$date->slug)}}">admin</a></p>
+			<p class="post-meta animated  slideInLeft blog-post-meta">{{ $date->created_at->diffForHumans() }}</p>
 			<hr>
 			@endif
 			@endforeach
