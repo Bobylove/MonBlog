@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-<marquee id="test1" onmouseover="stop()" onmouseout="start()"><span id="test1" >
+<marquee id="test1" scrolldelay="20" onmouseover="stop()" onmouseout="start()"><span id="test1" >
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
 	<a href="{{ URL::route('posts.show',$slide->slug)}}">{{ $slide->name }} ......</a> 
