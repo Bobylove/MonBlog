@@ -1,10 +1,10 @@
 @extends('welcome')
 
 @section('content')
-<marquee id="test1" scrolldelay="10" scrollamount="5" onmouseover="stop()" onmouseout="start()"><span id="test1" >
+<marquee id="test1" scrolldelay="10" scrollamount="5" onmouseover="stop()" onmouseout="start()"><span id="test1" >Articles :
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
-	<a href="{{ URL::route('posts.show',$slide->slug)}}">article : &nbsp;{{ $slide->name }} &emsp;</a> 
+	<a href="{{ URL::route('posts.show',$slide->slug)}}"> &nbsp;{{ $slide->name }} &emsp;</a> 
 	@endif
 	@endforeach
 </span></marquee>
