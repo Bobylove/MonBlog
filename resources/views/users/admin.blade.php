@@ -35,11 +35,11 @@
 				@endif
 
 				{{ Form::close() }}
-				{{ Form::open(['route'=>['users.delete',$user->id],'method'=>'Delete']) }}
+				{{ Form::open(['route'=>['users.delete',$user->id],'meth od'=>'Delete']) }}
 				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
 				{{ Form::close() }}
 				@else
-				<div class="btn-primary">GOD MODE</div>
+				<div><button class="btn btn-warning">Dont Touch me</button></div>
 				@endif
 
 
