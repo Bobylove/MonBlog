@@ -26,12 +26,12 @@
 			</th>
 			<th>
 				@if($user->id != 1)
-				{{ Form::open(['route'=>['users.permission',$user->id],'method'=>'POST']) }}
+				{{Form::open(['route'=>['users.permission',$user->id],'method'=>'POST']) }}
 				@if($user->is_admin)
 				{{ Form::submit('Rendre Membre',['class'=>'btn btn-primary']) }}
 				@else
 				
-				{{ Form::submit('Rendre Administrateur',['class'=>'btn btn-primary']) }}
+				{{ Form::submit('Rendre Administrateur',['class'=>'btn btn-primary'])}}
 				@endif
 
 				{{ Form::close() }}
@@ -39,7 +39,7 @@
 				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
 				{{ Form::close() }}
 				@else
-				<div>GOD MODE</div>
+				<div class="btn-green">GOD MODE</div>
 				@endif
 
 
