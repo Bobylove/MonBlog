@@ -45,6 +45,8 @@
 
           <li> <a  href="{{ URL::route('users.profil')}}">Mon profil</a>
           </li>
+          <li> <a  href="{{ URL::route('users.membres')}}">Les Membres</a>
+          </li>
           <li><a  href="{{ URL::route('users.logout')}}">Se Déconnecter</a></li>
 
           @endif

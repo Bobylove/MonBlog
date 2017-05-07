@@ -83,6 +83,8 @@ Route::get('login',['as'=>'users.login','uses'=>'UserController@login']);
 
 Route::group(['before'=>'auth'],function(){
 
+	Route::get('users/membres',['as'=>'users.membres','uses'=>'UserController@showMembres']);
+
 	Route::post('posts/{id}/comments/create',['as'=>'comments.create','uses'=>'CommentController@create']);
 });
 

@@ -4,7 +4,7 @@
 <marquee id="test1" scrolldelay="10" scrollamount="5" onmouseover="stop()" onmouseout="start()"><span id="test1" >Articles :
 	@foreach($postSlide as $slide)
 	@if($slide->publier == 1 )
-	<a href="{{ URL::route('posts.show',$slide->slug)}}"> &nbsp;{{ $slide->name }} </a>&emsp;
+	<a href="{{ URL::route('posts.show',$slide->slug)}}"> &emsp;{{ $slide->name }} </a>&emsp;
 	@endif
 	@endforeach
 </span></marquee>
@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="site-heading">
-					<h1 class="animated wobble">Geek and Eat</h1>
+					<h1 class="animated wobble">Geek and Hit</h1>
 					<hr class="small">
 					<h2 class="subheading animated zoomIn"><b>Bienvenue et Bonne lecture</b> </h2>
 				</div>

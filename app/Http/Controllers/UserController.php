@@ -25,6 +25,10 @@ class UserController extends Controller
 		$users = User::all();
 		return view('users.admin',compact('users'));
 	}
+	public function showMembres(){
+		$users = User::all();
+		return view('users.membres',compact('users'));
+	}
 	public function delete($id){
 		$user = User::find($id);
 		$user->delete();
