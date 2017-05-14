@@ -117,6 +117,7 @@
             </a>
           </li>
         </ul>
+   @yield('canvas')
         <p>
           <a href="#">Back to top</a>
         </p>
