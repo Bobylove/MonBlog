@@ -66,12 +66,12 @@
 	</canvas>
 </div>
 <div id="tags">
-	<ul>
-		<li><a href="http://www.google.com" target="_blank">Google</a></li>
-		<li><a href="/fish">Fish</a></li>
-		<li><a href="/chips">Chips</a></li>
-		<li><a href="/salt">Salt</a></li>
-		<li><a href="/vinegar">Vinegar</a></li>
+<ul>
+@foreach($postSlide as $slide)
+	@if($slide->publier == 1 )
+	<li><a href="{{ URL::route('posts.show',$slide->slug)}}"> {{ $slide->name }} </a></li>
+	@endif
+	@endforeach
 	</ul>
 </div>
 @stop
