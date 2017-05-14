@@ -35,7 +35,7 @@
 				@endif
 
 				{{ Form::close() }}
-				{{ Form::open(['route'=>['users.delete',$user->id],'meth od'=>'Delete']) }}
+				{{ Form::open(['route'=>['users.delete',$user->id],'meth od'=>'delete']) }}
 				{{ Form::submit('X',['class'=>'btn btn-danger']) }}
 				{{ Form::close() }}
 				@else
