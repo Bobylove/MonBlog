@@ -9,6 +9,7 @@
 			<th>prénom</th>
 			<th>nom</th>
 			<th>email</th>
+			<th>contact</th>
 
 		</tr>
 	</thead>
@@ -19,13 +20,16 @@
 			<th>{{ $user->firstname }}</th>
 			<th>{{ $user->lastname }}</th>
 			<th>{{ $user->email }}</th>
-		</tr>
-		@endforeach
-	</tbody>
-</table>
+			<th>{{ Form::open(['route'=>['users.contact',$user->id],'method'=>'Post']) }}
+				{{ Form::submit('formulaire',['class'=>'btn btn-primary']) }}
+				{{ Form::close() }}</th>
+			</tr>
+			@endforeach
+		</tbody>
+	</table>
 
-@else
-<div class="aler alert-danger">Page administrateur réserver</div>
-@endif
+	@else
+	<div class="aler alert-danger">Page administrateur réserver</div>
+	@endif
 
-@stop
+	@stop

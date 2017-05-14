@@ -8,6 +8,20 @@
 	@endif
 	@endforeach
 </span></marquee>
+ <div id="myCanvasContainer">
+     <canvas width="300" height="300" id="myCanvas">
+       <p>Anything in here will be replaced on browsers that support the canvas element</p>
+     </canvas>
+   </div>
+   <div id="tags">
+     <ul>
+       <li><a href="http://www.google.com" target="_blank">Google</a></li>
+       <li><a href="/fish">Fish</a></li>
+       <li><a href="/chips">Chips</a></li>
+       <li><a href="/salt">Salt</a></li>
+       <li><a href="/vinegar">Vinegar</a></li>
+     </ul>
+   </div>
 <header class="intro-header" style="background-image: url('img.jpg')">
 	<div class="container">
 		<div class="row">
