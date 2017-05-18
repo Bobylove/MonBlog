@@ -3,14 +3,12 @@
 @section('content')
 @if(Auth::check())
 
-<table class="table-stripped table table-bordered">
+<table id="myTable" class="table-stripped table table-bordered">
 	<thead>
 		<tr>
 			<th>prénom</th>
 			<th>nom</th>
 			<th>email</th>
-			<th>contact</th>
-
 		</tr>
 	</thead>
 	<tbody>
@@ -30,7 +28,7 @@
 	@endif
 
 <br>
-TEST 2
+TEST
 	<div id="example">
 		
 
