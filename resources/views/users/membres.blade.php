@@ -20,9 +20,6 @@
 			<th>{{ $user->firstname }}</th>
 			<th>{{ $user->lastname }}</th>
 			<th>{{ $user->email }}</th>
-			<th>{{ Form::open(['route'=>['users.contact',$user->id],'method'=>'Post']) }}
-				{{ Form::submit('formulaire',['class'=>'btn btn-primary']) }}
-				{{ Form::close() }}</th>
 			</tr>
 			@endforeach
 		</tbody>
