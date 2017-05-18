@@ -88,6 +88,13 @@
 
 
 </div>
+<br>
+<br>
+<br>
+@yield('canvas')
+
+<br>
+<br>
 <footer>
   <div class="container">
     <div class="row">
@@ -118,7 +125,7 @@
             </a>
           </li>
         </ul>
-   @yield('canvas')
+   
         <p>
           <a href="#">Back to top</a>
         </p>
