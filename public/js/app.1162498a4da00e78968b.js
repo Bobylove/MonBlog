@@ -92,6 +92,8 @@ $(document).ready(function () {
 		// something went wrong, hide the canvas container
 		$('#myCanvasContainer').hide();
 	};
+
+	$('#myTable').DataTable();
 });
 
 /***/ }),

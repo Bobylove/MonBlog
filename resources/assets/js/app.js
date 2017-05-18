@@ -24,6 +24,7 @@ $(document).ready(function () {
          $('#myCanvasContainer').hide();
      };
      
+     $('#myTable').DataTable();
      
  });
 
