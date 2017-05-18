@@ -29,13 +29,11 @@
 	<div class="aler alert-danger">Page administrateur réserver</div>
 	@endif
 
-
-	@foreach($users as $user)
-	<div id="myTable">
-		{{ $user->firstname }}
-		{{ $user->lastname }}
-		{{ $user->email }}
+<br>
+TEST 2
+	<div id="example">
+		
 
 	</div>
-	@endforeach
+
 	@stop

@@ -72,6 +72,8 @@
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+	$('#example').DataTable();
+
 	$(".alert").fadeTo(2000, 500).slideUp(1000, function () {
 		$('.alert').remove();
 	});
@@ -92,8 +94,6 @@ $(document).ready(function () {
 		// something went wrong, hide the canvas container
 		$('#myCanvasContainer').hide();
 	};
-
-	$('#myTable').DataTable();
 });
 
 /***/ }),
