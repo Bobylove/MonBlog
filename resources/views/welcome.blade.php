@@ -44,7 +44,7 @@
           </li>
           @if(Auth::check())
 
-          <li> <a  href="{{ URL::route('users.profil')}}">Bienvenue {{ Auth::User()->firstname }}</a>
+          <li class="animated zoomIn"> <a  href="{{ URL::route('users.profil')}}">Bienvenue {{ Auth::User()->firstname }}</a>
           </li>
           <li> <a  href="{{ URL::route('users.membres')}}">Les Membres</a>
           </li>
